@@ -1,22 +1,23 @@
-#REDIS -TORNADO -SESSION
+#REDIS 实现 TORNADO的SESSION功能.
 
-Refer to [tornado-mechane-session] (https://github.com/mmejia27/tornado-memcached-sessions)
+Refer to [tornado-mechane-session] (https://github.com/zs1621/tornado-redis-session)
+对以上代码的改写.
 
-##use
+##安装
 
- - install `ujson` `redis`  
-
-
-```
- sudo pip install ujson redis
-```
- - download session.py
-
-```
-curl -O https://raw.githubusercontent.com/zs1621/tornado-redis-session/master/session.py
+```bash
+install ujson redis
 ```
 
- - Refer to example
+```bash
+pip install ujson redis
+```
 
+download session.py
+```
+curl -O https://github.com/DaveIW2034/tornado-redis-session/blob/master/session.py
+```
 
+##使用说明如何嵌入至tornado中
+refer example
 
