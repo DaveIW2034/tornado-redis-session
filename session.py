@@ -2,8 +2,7 @@
 # coding: utf-8
 
 """
-未完待续...
-此代码缺乏异常处理抛出层次.
+Cookie 中 Session verification 校验失败抛出异常.
 """
 
 import uuid
@@ -27,8 +26,7 @@ class Session(SessionData):
         try:
             current_session = session_manager.get(request_handler)
         except InvalidSessionException:
-            # 后续处理进行日志打印及报错.
-            pass
+            raise InvalidSessionException("Tornado-redis validSession")
         for key, data in current_session.iteritems():
             self[key] = data
         self.session_id = current_session.session_id
@@ -75,7 +73,7 @@ class SessionManager(object):
             hmac_key = self._generate_hmac(session_id)
         check_hmac = self._generate_hmac(session_id)
         if hmac_key != check_hmac:
-            raise InvalidSessionException()
+            raise InvalidSessionException("Tornado-redis validSession")
 
         session = SessionData(session_id, hmac_key)
 
