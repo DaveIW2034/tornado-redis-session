@@ -19,5 +19,4 @@ curl -O https://github.com/DaveIW2034/tornado-redis-session/blob/master/session.
 ```
 
 ##使用说明如何嵌入至tornado中
-refer example
-
+参考 example 示例项目.
